@@ -31,7 +31,10 @@ function fe_recipe_cpt() {
 	register_post_type( 'fe_recipe', array(
 		// Label should be plural and L10n ready.
 		'label'       => __( 'Recipes', 'fe_recipe' ),
-		'public'      => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'show_in_nav_menus'   => true,
+		'show_ui'             => true,
 		'has_archive' => true,
 		'rewrite'     => array(
 			// Slug should be plural and L10n ready.
