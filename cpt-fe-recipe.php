@@ -3,7 +3,7 @@
  * Plugin Name: Iron Code Recipe Custom Post Type
  * Plugin URI: https://salferrarello.com/cpt-best-practices/
  * Description: Register a WordPress Custom Post Type (CPT) `fe_recipe` with a custom Taxonomy `fe_recipe_tag`.
- * Version: 1.4.1
+ * Version: 1.5.0
  * Author: Sal Ferrarello
  * Author URI: http://salferrarello.com/
  * Text Domain: fe-recipe-cpt
@@ -27,6 +27,7 @@ add_action( 'pre_get_posts', 'fe_recipe_cpt_modify_archive' );
 /**
  * Modify Archive Page
  * - Increase number of posts shown on Recipe archive page.
+ * - Eliminate all elements from posts other than the title.
  *
  * @param WP_Query $query The current query.
  */
@@ -35,6 +36,20 @@ function fe_recipe_cpt_modify_archive( $query ) {
 		return;
 	}
 	$query->set( 'posts_per_page', 50 );
+
+	remove_action( 'genesis_entry_header', 'genesis_do_post_format_image', 4 );
+	remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
+	remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 );
+	remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
+	remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
+	remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
+	remove_action( 'genesis_entry_content', 'genesis_do_post_content_nav', 12 );
+	remove_action( 'genesis_entry_content', 'genesis_do_post_permalink', 14 );
+	remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_open', 5 );
+	remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_close', 15 );
+	remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
+	remove_action( 'genesis_after_entry', 'genesis_do_author_box_single', 8 );
+	remove_action( 'genesis_after_entry', 'genesis_get_comments_template' );
 }
 
 /**
