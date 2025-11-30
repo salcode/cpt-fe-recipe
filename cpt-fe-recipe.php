@@ -55,7 +55,7 @@ function fe_recipe_cpt_modify_archive( $query ) {
 
 	if (
 		! is_post_type_archive( 'fe_recipe' )
-		&& ! $query->query['fe_recipe_tag']
+		&& empty( $query->query['fe_recipe_tag'] )
 	) {
 		return;
 	}
