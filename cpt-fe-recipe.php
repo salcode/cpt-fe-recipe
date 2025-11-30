@@ -61,7 +61,7 @@ function fe_recipe_cpt_modify_archive( $query ) {
 	}
 	$query->set( 'order', 'ASC' );
 	$query->set( 'orderby', 'title' );
-	$query->set( 'posts_per_page', 50 );
+	$query->set( 'posts_per_page', 99 );
 
 	remove_action( 'genesis_entry_header', 'genesis_do_post_format_image', 4 );
 	remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
