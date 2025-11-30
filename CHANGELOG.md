@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## [v2.0.0] - 2025-11-30
 - Add `CHANGELOG.md` file ([#12](https://github.com/salcode/cpt-fe-recipe/issues/12))
 - Sort Recipe post type alphabetically by title ([#9](https://github.com/salcode/cpt-fe-recipe/issues/9))
 - Increase Recipes per page from `50` to `99` ([#11](https://github.com/salcode/cpt-fe-recipe/issues/11))

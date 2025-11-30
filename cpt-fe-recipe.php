@@ -3,7 +3,7 @@
  * Plugin Name: Iron Code Recipe Custom Post Type
  * Plugin URI: https://salferrarello.com/cpt-best-practices/
  * Description: Register a WordPress Custom Post Type (CPT) `fe_recipe` with a custom Taxonomy `fe_recipe_tag`.
- * Version: 1.6.0
+ * Version: 2.0.0
  * Author: Sal Ferrarello
  * Author URI: http://salferrarello.com/
  * Text Domain: fe-recipe-cpt
